@@ -1,3 +1,42 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react-native",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "lib": ["esnext", "dom", "es5", "es6"],
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./app",
+    "paths": {
+      "@app-components/*": ["./components/*"],
+      "@app-containers/*": ["./containers/*"],
+      "@app-helpers/*": ["./helpers/*"],
+      "@app-navigations/*": ["./navigations/*"],
+      "@app-experience/*": ["./experience/*"],
+      "@app-services/*": ["./services/*"],
+      "@app-contexts/*": ["./contexts/*"]
+    },
+    "types": ["react", "react-native"]
+  },
+  "exclude": ["node_modules", "metro.config.js"],
+  "include": [
+    "index.js",
+    "app",
+    "test",
+    "react-native.config.js",
+    "types/declarations.d.ts",
+    "types/react-native-config.d.ts"
+  ],
+  "extends": "@tsconfig/react-native/tsconfig.json"
 }

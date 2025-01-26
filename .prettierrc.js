@@ -1,7 +1,12 @@
 module.exports = {
-  arrowParens: 'avoid',
-  bracketSameLine: true,
-  bracketSpacing: false,
+  printWidth: 100,
+  bracketSpacing: true,
+  bracketSameLine: false,
   singleQuote: true,
-  trailingComma: 'all',
-};
+  trailingComma: "all",
+  semi: false,
+  arrowParens: "always",
+  importOrder: ["^react(?:.*)$", "^@(?!app).*$", "^@app(.*)$", "^[./]"],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true
+}

@@ -59,7 +59,7 @@ const MainNavigation = () => {
             headerTitle: '',
             tabBarLabel: 'Discover',
             tabBarIcon: ({ focused, color, size }) =>
-              <Ionicons name={`calculator${focused ? '' : '-outline'}`} color={color} size={size} />,
+              <Ionicons name={`search${focused ? '' : '-outline'}`} color={color} size={size} />,
           }}
         />
         <Main.Screen
@@ -70,7 +70,7 @@ const MainNavigation = () => {
             headerTitle: '',
             tabBarLabel: 'Create',
             tabBarIcon: ({ focused, color, size }) =>
-              <Ionicons name={`calculator${focused ? '' : '-outline'}`} color={color} size={size} />,
+              <Ionicons name={`add-circle${focused ? '' : '-outline'}`} color={color} size={size} />,
           }}
         />
         <Main.Screen
@@ -81,7 +81,7 @@ const MainNavigation = () => {
             headerTitle: '',
             tabBarLabel: 'Community',
             tabBarIcon: ({ focused, color, size }) =>
-              <Ionicons name={`calculator${focused ? '' : '-outline'}`} color={color} size={size} />,
+              <Ionicons name={`people${focused ? '' : '-outline'}`} color={color} size={size} />,
           }}
         />
         <Main.Screen
@@ -92,7 +92,7 @@ const MainNavigation = () => {
             headerTitle: '',
             tabBarLabel: 'Me',
             tabBarIcon: ({ focused, color, size }) =>
-              <Ionicons name={`calculator${focused ? '' : '-outline'}`} color={color} size={size} />,
+              <Ionicons name={`person-circle${focused ? '' : '-outline'}`} color={color} size={size} />,
           }}
         />
       </Main.Navigator>

@@ -1,116 +1,47 @@
+import { Community, HashTags, Nomads } from "./interfaces";
 
-import { Platform } from 'react-native';
-
-import Containers from '@app-navigations/containers';
-import StorageService from '@app-services/storage.service';
-
-import NavigationHelper from './navigation';
-import Storage from './storage';
-
-export const isIOS = Platform.OS === 'ios';
-
-
-export const formatToCrores = (value) => {
-  const crores = value / 1e7;
-
-  return `${crores.toLocaleString('en-IN', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })} Cr`;
+export const generateNomadsList = (count: number): Nomads[] => {
+  return Array.from({ length: count }).map((_, index) => ({
+    image: `https://picsum.photos/100/100`,
+    name: generateRandomAccountName(),
+    followerCount: Math.floor(Math.random() * 100) + 1, // Random followers between 1 and 10,000
+  }));
 };
 
-export const calculateAge = (dateOfBirth: any) => {
-  const dob = new Date(dateOfBirth);
-  const today = new Date();
-  let age = today.getFullYear() - dob.getFullYear();
-  const monthDiff = today.getMonth() - dob.getMonth();
+export const generateRandomAccountName = () => {
+  const prefixes = [
+    "m", "play", "dark", "sky", "light", "shadow", "happy", "fast", "cool", "blue",
+    "red", "green", "silver", "golden", "fire", "wild", "chill", "free", "swift"
+  ];
 
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
-    age--;
-  }
-  return age;
-};
+  const suffixes = [
+    "hogan", "parker", "smith", "hunter", "wolf", "storm", "fox", "spark", "dash",
+    "hawk", "flame", "rider", "king", "shadow", "path", "river", "blade", "jones"
+  ];
 
-export const calculateAgeDefference = (dob: any) => {
-  const [year, month, day] = dob.split('-').map(Number);
-  const birthDate = new Date(year, month - 1, day);
-  const today = new Date();
+  // Pick a random prefix and suffix
+  const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+  const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
 
-  let age = today.getFullYear() - birthDate.getFullYear();
+  // Combine and return with an "@" symbol
+  return `@${prefix}${suffix}`;
+}
 
-  const isBirthdayPassed =
-    today.getMonth() > birthDate.getMonth() ||
-    (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
 
-  if (!isBirthdayPassed) {
-    age -= 1;
-  }
-
-  return age;
-};
-
-export const currencyConverter = (amount: number, currency: string) => {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency,
-    maximumFractionDigits: 0,
-  }).format(amount);
-};
-
-export const removeCounsellorFromString = (inputString: any) => {
-  return inputString.replace(/\bCounsellor\b/g, '').trim();
-};
-
-export const goToLogin = async () => {
-  await StorageService.remove.removeUser();
-  NavigationHelper.reset(Containers.InitialScreen as never);
+export const generateCommunityList = (count: number): Community[] => {
+  return Array.from({ length: count }).map((_, index) => ({
+    image: `https://picsum.photos/100/100`,
+    postCount: Number(Math.floor(Math.random() * 100) + 1),
+    firstHeading: generateRandomAccountName(),
+    secondHeading: generateRandomAccountName(),
+  }));
 };
 
 
-export const getPortfolioAnalyzerUrl = (name: string) => {
-  const url = `https://i4edevstorage.blob.core.windows.net/i4e-webiste-images/AMC logos/${name}.png`;
-
-  return url;
-};
-
-
-export const calculateStudentProfileAge = (dateOfBirth: any) => {
-  const currentDate: any = new Date();
-  const ageInMilliseconds: any = currentDate - new Date(dateOfBirth);
-  const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
-  const age = Math.floor(ageInYears);
-
-  return age;
-};
-
-export const getYearDifference = (startYear, endYear) => {
-  return Math.abs(endYear - startYear);
-};
-
-export const groupByCategory = (data: any) => {
-  return data.reduce((acc: any, scheme: any) => {
-    const category = scheme.DPCategoryName;
-
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(scheme);
-    return acc;
-  }, {});
-};
-
-export const getLargeDataset = async (key) => {
-  try {
-    const count = parseInt(await Storage.get(`${key}_chunks_count`), 10);
-    const dataset: any = [];
-
-    for (let i = 0; i < count; i++) {
-      const chunk = await Storage.get(`${key}_chunk_${i}`);
-
-      if (chunk) {dataset.push(...JSON.parse(chunk));}
-    }
-    return JSON.stringify(dataset);
-  } catch (error) {
-    console.error('Error retrieving dataset:', error);
-  }
+export const generateHashTagList = (count: number): HashTags[] => {
+  return Array.from({ length: count }).map((_, index) => ({
+    image: `https://picsum.photos/seed/100/100`,
+    type: generateRandomAccountName(),
+    count: Number(Math.floor(Math.random() * 100) + 1),
+  }));
 };

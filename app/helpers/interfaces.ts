@@ -19,63 +19,21 @@ export type NativeStack = TypedNavigator<
   }: NativeStackNavigatorProps) => JSX.Element
 >
 
-export type ITrackScreenPayload = {
-  screen: string
-  user_id?: string
-  properties?: any
+export type Nomads = {
+  image: string;
+  name: string;
+  followerCount: number;
 }
 
-export type ITrackClickPayload = {
-  event: string
-  user_id?: string
-  properties?: any
+export type Community = {
+  image: string;
+  postCount: number,
+  firstHeading: string,
+  secondHeading: string
 }
 
-export type ITrackExternalLinkPayload = {
-  to: string
-  user_id?: string
-  properties?: any
-}
-
-export enum AuthType {
-  LOGIN = 'Login',
-  REGISTRATION = 'Registration',
-  LOGOUT = 'Logout',
-}
-
-export type ITrackUserAuthPayload = {
-  mode: AuthType
-  status: string
-}
-
-export enum InputType {
-  TEXT = 'Text',
-  DATE = 'Date',
-  SELECT = 'Select',
-  MULTISELECT = 'MultiSelect',
-  MULTISELECT_BUTTONS = 'MultiSelectButtons',
-  RADIOBUTTON = 'RadioButton',
-  SINGLESELECT = 'SINGLESELECT',
-}
-
-export enum CardHeader {
-  Test = 'Psychometric Test',
-  Counselling = 'Career Counselling',
-  Journey = 'Education Journey',
-  SkillBuilding = 'Skill Building',
-  CareerLib = 'Career Library',
-  PortfolioAnalyzer = 'Portfolio Analyzer',
-  MutualFund = 'Mutual Fund',
-  EduCost = 'Edu Cost Calculator',
-  EduLoan = 'Education Loan',
-  FixedDeposit = 'Fixed Deposit',
-  EduLoanCalc = 'EduLoan Calculator',
-  SIPCalc = 'SIP Calculator',
-  FDCalc = 'FD Calculator',
-  LumpSumpCalc = 'Lumpsum Calculator',
-  CompareMF = 'Compare MF',
-  FilterMF = 'Filter MF',
-  Investment = 'Investment Portfolio',
-  Basket = 'Suggested Basket',
-  College = 'College Listing',
+export type HashTags = {
+  image: string,
+  type: string,
+  count: number
 }

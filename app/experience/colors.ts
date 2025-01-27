@@ -20,38 +20,7 @@ const Colors = {
 
   gradientBlue: 'hsla(202, 100%, 78%, 0.2)',
   greenLight: 'hsla(179, 100%, 39%, 1)',
-  career_Library: 'hsla(244, 100%, 97%, 1)',
-  career_Library_lighter: 'hsla(244, 100%, 93%, 1)',
-  career_Library_lightest: 'hsla(242, 46%, 78%, 1)',
-  skill_building: 'hsla(139, 100%, 85%, 0.3)',
-  skill_building_darker: 'hsla(139, 76%, 77%, 1)',
-  skill_building_lighter: 'hsla(139, 31%, 55%, 1)',
 
-  allocation: {
-    one: 'hsla(238, 100%, 65%, 1)',
-    two: 'hsla(9, 100%, 50%, 1)',
-    three: 'hsla(43, 100%, 50%, 1)',
-    four: 'hsla(178, 100%, 41%, 1)',
-    five: 'hsla(133, 100%, 49%, 1)',
-    six: 'hsla(197, 100%, 49%, 1)',
-    seven: 'hsla(52, 99%, 52%, 1)',
-    eight: 'hsla(146, 100%, 41%, 1)',
-    nine: 'hsla(278, 92%, 64%, 1)',
-    ten: 'hsla(208, 100%, 40%, 1)',
-    eleven: 'hsla(27, 100%, 50%, 1)',
-    twelve: 'hsla(336, 100%, 50%, 1)',
-    thirteen: 'hsla(197, 100%, 32%, 1)',
-    fourteen: 'hsla(164, 100%, 34%, 1)',
-    fifteen: 'hsla(90, 50%, 50%, 1)',
-  },
-
-  comprehension: {
-    personality: 'hsla(29, 100%, 93%, 1)',
-    aptitude: 'hsla(0, 100%, 92%, 1)',
-    intrest: 'hsla(48, 100%, 87%, 1)',
-    learning: 'hsla(48, 100%, 87%, 1)',
-    emotional: 'hsla(48, 100%, 87%, 1)',
-  },
   primary: {
     lightest: 'hsla(225, 64%, 91%, 1)',
     lighter: 'hsla(225, 64%, 83%, 1)',
@@ -131,6 +100,7 @@ const Colors = {
     light: 'hsla(136, 100%, 84%, 1)',
     lighter: 'hsla(148, 71%, 37%, 1)',
     lighter_100: 'hsla(148, 100%, 91%, 1)',
+    lighter_200: 'hsla(188, 17%, 43%, 1)'
   },
   green: {
     lightest: 'hsla(62, 87%, 45%, 1)',

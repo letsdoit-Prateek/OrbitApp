@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
         right: Metrics.size.s1,
         flexDirection: 'column',
         justifyContent: 'space-between',
+        gap: Metrics.size.s3 + 5
       } as ViewStyle,
       iconButton: {
         marginHorizontal: Metrics.size.s2,
